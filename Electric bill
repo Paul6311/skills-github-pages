@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+int id,unitconsumed;
+char name[10];
+float cost,netcost, surcharge,charge ;
+
+printf("Enter the name of customer:",name);
+scanf("%s",&name);
+printf("Enter customer id:",id);
+scanf("%d",&id);
+printf("Enter unit consumed:", unitconsumed);
+scanf("%d",&unitconsumed);
+
+if(unitconsumed<=360){
+ charge=2.5;
+ }
+ else if(unitconsumed<600){
+ charge=3.5;
+ }
+ else if(unitconsumed<1000){
+ charge=4.5;
+ }
+ else {
+ charge =5.5;
+ }
+ 
+ cost=unitconsumed*charge;
+ 
+ if(cost>=600){
+ surcharge =cost*0.12;
+ }else{
+ surcharge=cost*0;
+ }
+  
+  netcost=cost+surcharge;
+  
+  if(netcost<=200){
+  netcost=200;
+  }else{
+ printf(" The net cost is :%f",netcost);
+ }
+  
+  printf("The name of customer is :%s\n",name);
+  printf("Customer id is:%d\n",id);
+  printf("Unit consumed is:%d\n", unitconsumed);
+  printf("The cost is :%.2f\n",cost);
+  printf("Surcharge amount is :%.2f\n", surcharge);
+  printf("Net cost is :%.2f\n",netcost);
+  
+    return 0;
+}
